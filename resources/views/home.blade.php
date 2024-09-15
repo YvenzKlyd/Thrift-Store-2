@@ -109,7 +109,7 @@
             <div class="col">
                 <h1 class="display-4 mb-4 slide-in-left">Welcome To Thrift Store!</h1>
                 <p class="lead mb-4">Unique clothing just for you.</p>
-                <a href="{{ route('products.index') }}" class="btn btn-primary btn-lg slide-in-right">Shop Now</a>
+                <a href="{{ route('shop.now') }}" class="btn btn-primary btn-lg slide-in-right">Shop Now</a>
             </div>
         </div>
     </div>

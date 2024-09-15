@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 
 // Root route
 Route::get('/', [HomeController::class, 'index']);
@@ -21,3 +22,13 @@ Route::resource('products', ProductController::class);
 Route::get('/home', function () {
     return view('home');
 })->name('home');
+
+Auth::routes();
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('auth');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/shop-now', [ShopController::class, 'shopNow'])->name('shop.now');
+
+Route::get('/shop-choice', [ShopController::class, 'choice'])->name('shop.choice');
